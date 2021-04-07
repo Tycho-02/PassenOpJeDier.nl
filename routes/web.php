@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::middleware(['auth', 'admin'])->group(function() {
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
+    Route::post('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'block']);
+    Route::post('/admin/{id}/unblock', [\App\Http\Controllers\AdminController::class, 'unblock']);
+});
+
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth']);

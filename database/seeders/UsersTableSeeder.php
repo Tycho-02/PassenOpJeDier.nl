@@ -45,6 +45,7 @@ class UsersTableSeeder extends Seeder
             'isOppasser' => true,
             'isHuisdier' => true,
             'geboortedatum' => "1972-12-12",
+            'isBlocked' => true,
         ]);
     }
 }
