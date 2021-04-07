@@ -16,7 +16,7 @@ class CreateOppasvraagTable extends Migration
         Schema::create('oppasvraag', function (Blueprint $table) {
             $table->id("oppasvraagId");
             $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('userId')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
             $table->dateTime("beginDatum");
             $table->dateTime("eindDatum");
             $table->text("Omschrijving");

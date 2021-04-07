@@ -17,7 +17,7 @@ class CreateAanvragenTable extends Migration
             $table->id('aanvraagId');
             $table->dateTime('aanvraagDatum')->now();
             $table->unsignedBigInteger("aanvrager");
-            $table->foreign("aanvrager")->references('userId')->on('users');
+            $table->foreign("aanvrager")->references('id')->on('users');
         });
     }
 

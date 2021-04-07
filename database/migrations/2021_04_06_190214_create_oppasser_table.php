@@ -15,7 +15,7 @@ class CreateOppasserTable extends Migration
     {
         Schema::create('oppasser', function (Blueprint $table) {
             $table->unsignedBigInteger('userId')->unique();
-            $table->foreign('userId')->references('userId')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
             $table->text('omschrijving');
             $table->float('uurtarief', 8, 2);
             $table->boolean('hond')->default(false);

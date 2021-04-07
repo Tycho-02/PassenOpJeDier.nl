@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Tycho van Veen",
             'email' => "mail@tychovanveen.nl",
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('12345678'),
             'role' => "Admin",
             'geboortedatum' => "2002-02-03",
         ]);
@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Mitch van Veen",
             'email' => "mitch@mail.nl",
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('12345678'),
             'isHuisdier' => true,
             'geboortedatum' => "2005-01-03",
         ]);
@@ -33,7 +33,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Hans van Veen",
             'email' => "hans@mail.nl",
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('12345678'),
             'isOppasser' => true,
             'geboortedatum' => "1968-05-04",
         ]);
@@ -41,7 +41,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'name' => "Esther van Veen",
             'email' => "esther@mail.nl",
-            'password' => bcrypt('12345'),
+            'password' => bcrypt('12345678'),
             'isOppasser' => true,
             'isHuisdier' => true,
             'geboortedatum' => "1972-12-12",

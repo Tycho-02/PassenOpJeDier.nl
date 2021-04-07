@@ -15,7 +15,7 @@ class CreateHuisdierTable extends Migration
     {
         Schema::create('huisdier', function (Blueprint $table) {
             $table->unsignedBigInteger('userId')->unique();
-            $table->foreign('userId')->references('userId')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
             $table->string("naam");
             $table->integer("leeftijd");
             $table->text("eigenschappen");

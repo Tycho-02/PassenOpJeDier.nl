@@ -16,7 +16,7 @@ class CreateOppasserFotosTable extends Migration
         Schema::create('oppasser_fotos', function (Blueprint $table) {
             $table->id('fotoId');
             $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('userId')->on('users');
+            $table->foreign('userId')->references('id')->on('users');
             $table->string('foto');
         });
     }
