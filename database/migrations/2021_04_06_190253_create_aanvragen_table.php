@@ -14,8 +14,10 @@ class CreateAanvragenTable extends Migration
     public function up()
     {
         Schema::create('aanvragen', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id('aanvraagId');
+            $table->dateTime('aanvraagDatum')->now();
+            $table->unsignedBigInteger("aanvrager");
+            $table->foreign("aanvrager")->references('userId')->on('users');
         });
     }
 
@@ -26,6 +28,9 @@ class CreateAanvragenTable extends Migration
      */
     public function down()
     {
+        Schema::table('aanvragen', function(Blueprint $table) {
+            $table->dropForeign('aanvragen_aanvrager_foreign');
+        });
         Schema::dropIfExists('aanvragen');
     }
 }

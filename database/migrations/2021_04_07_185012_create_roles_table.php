@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHuisdierSoortenTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateHuisdierSoortenTable extends Migration
      */
     public function up()
     {
-        Schema::create('huisdier_soorten', function (Blueprint $table) {
-            $table->string("soort")->unique();
+        Schema::create('roles', function (Blueprint $table) {
+            $table->string('role')->unique();
         });
     }
 
@@ -25,6 +25,6 @@ class CreateHuisdierSoortenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('huisdier_soorten');
+        Schema::dropIfExists('roles');
     }
 }

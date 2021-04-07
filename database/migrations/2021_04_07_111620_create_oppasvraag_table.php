@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewsTable extends Migration
+class CreateOppasvraagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->id('reviewId');
+        Schema::create('oppasvraag', function (Blueprint $table) {
+            $table->id("oppasvraagId");
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
-            $table->bigInteger('reviewBy');
-            $table->text("review");
-            $table->date("reviewDatum")->now();
+            $table->dateTime("beginDatum");
+            $table->dateTime("eindDatum");
+            $table->text("Omschrijving");
+            $table->text("belangrijk");
         });
     }
 
@@ -30,9 +31,9 @@ class CreateReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::table('reviews', function(Blueprint $table) {
-            $table->dropForeign('reviews_userId_foreign');
+        Schema::table('oppasvraag', function(Blueprint $table) {
+            $table->dropForeign('oppasvraag_userId_foreign');
         });
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('oppasvraag');
     }
 }

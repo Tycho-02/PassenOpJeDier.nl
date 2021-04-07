@@ -14,8 +14,14 @@ class CreateOppasserTable extends Migration
     public function up()
     {
         Schema::create('oppasser', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('userId')->unique();
+            $table->foreign('userId')->references('userId')->on('users');
+            $table->text('omschrijving');
+            $table->float('uurtarief', 8, 2);
+            $table->boolean('hond')->default(false);
+            $table->boolean('kat')->default(false);
+            $table->boolean('cavia')->default(false);
+            $table->boolean('hamster')->default(false);
         });
     }
 
@@ -26,6 +32,9 @@ class CreateOppasserTable extends Migration
      */
     public function down()
     {
+        Schema::table('oppasser', function(Blueprint $table) {
+            $table->dropForeign('oppasser_userId_foreign');
+        });
         Schema::dropIfExists('oppasser');
     }
 }
