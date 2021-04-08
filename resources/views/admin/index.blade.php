@@ -7,6 +7,16 @@
     <title>Admin</title>
 </head>
 <body>
+    @if (session()->has('succesMessage'))
+        <div>
+            <p>{{ session()->get('succesMessage') }}</p>
+        </div>
+    @endif
+    @if (session()->has('errorMessage'))
+        <div>
+            <p>{{ session()->get('errorMessage') }}</p>
+        </div>
+    @endif
     @foreach ($users as $user)
         <article>
             <ul>

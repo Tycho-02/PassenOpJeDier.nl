@@ -19,11 +19,9 @@ class AdminController extends Controller
 
         try {
             $user->save();
-            return redirect('/admin');
-            // ->with('succesMessage', 'Gebruiker is succesvol geblokkeerd!');
+            return redirect('/admin')->with('succesMessage', $user->email . " is succesvol geblokkeerd!");
         } catch (Exception $err) {
-            return redirect('/admin');
-            // ->with('errorMessage', 'Gebruiker kon niet geblokkeerd worden!');
+            return redirect('/admin')->with('errorMessage', $user->email . " kon niet geblokkeerd worden!");
         }
     }
 
@@ -33,9 +31,9 @@ class AdminController extends Controller
 
         try {
             $user->save();
-            return redirect('/admin')->with('succesMessage', 'Gebruiker is succesvol gedeblokkeerd!');
+            return redirect('/admin')->with('succesMessage', $user->email . " is succesvol gedeblokkeerd!");
         } catch (Exception $err) {
-            return redirect('/admin')->with('errorMessage', 'Gebruiker kon niet gedeblokkeerd worden!');
+            return redirect('/admin')->with('errorMessage', $user->email . " kon niet gedeblokkeerd worden!");
         }
     }
 }

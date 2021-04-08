@@ -13,18 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth', 'admin'])->group(function() {
+Route::middleware(['auth', 'blocked', 'admin'])->group(function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
     Route::post('/admin/{id}/block', [\App\Http\Controllers\AdminController::class, 'block']);
     Route::post('/admin/{id}/unblock', [\App\Http\Controllers\AdminController::class, 'unblock']);
 });
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(['auth']);
+Route::middleware(['auth', 'blocked'])->group(function() {
+    Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/', function () {return view('welcome');});
+Route::get('/blocked', function () {return view('blocked');});
+
+
 
 require __DIR__.'/auth.php';
