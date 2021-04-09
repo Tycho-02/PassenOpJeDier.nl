@@ -1,17 +1,16 @@
-@if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <a href="route('logout')"><button>Logout</button></a>
-            </form>
-        @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+@extends('Layouts.default')
 
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-            @endif
-        @endauth
+{{-- Page Title --}}
+@section('title')
+    {{"PassenOpJeDier.nl"}}
+@endsection
+
+{{-- Content --}}
+@section('content')
+    <h1>PassenOpJeDier.nl</h1>
+    <p>PassenOpJeDier.nl is DE website om de geschikte oppas voor je geliefde huisdier te vinden als jij er een dagje tussenuit wil of lekker een paar weken op vakantie gaat!</p>
+    <div>
+        <a href="{{ route('login') }}"><button>Log in</button></a>
+        <a href="{{ route('register') }}"><button>Registreer nu!</button></a>
     </div>
-@endif
+@endsection

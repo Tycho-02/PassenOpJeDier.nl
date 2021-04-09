@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware(['notAuth'])->group(function() {
+    Route::get('/', function () {return view('index');})->name('home');
+});
 
 Route::middleware(['auth', 'blocked', 'admin'])->group(function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
@@ -21,9 +24,9 @@ Route::middleware(['auth', 'blocked', 'admin'])->group(function() {
 
 Route::middleware(['auth', 'blocked'])->group(function() {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
+    Route::get('/menu', function () {return view('menu');})->name('menu');
 });
 
-Route::get('/', function () {return view('index');});
 Route::get('/blocked', function () {return view('blocked');});
 
 
