@@ -23,7 +23,7 @@ Route::middleware(['auth', 'blocked'])->group(function() {
     Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 });
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {return view('index');});
 Route::get('/blocked', function () {return view('blocked');});
 
 
