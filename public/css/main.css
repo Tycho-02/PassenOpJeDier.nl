@@ -1,0 +1,1117 @@
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: #0B2447;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+/* overzicht huisdieren */
+.nav{
+    width: 100%;
+    height: 7.5rem;
+    background-color: #0B2447;
+    border-bottom: 0.3rem solid #19376D;
+}
+
+.nav--admin{
+    border-bottom: 0.3rem solid #A5D7E8;
+}
+
+.nav__wrapper{
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem 0 2rem;
+}
+
+.nav__pagina{
+    display: inline-block;
+    margin: auto;
+}
+
+.nav__pagina--create{
+    float: right;
+}
+
+.nav__button{
+    padding: 1rem 3rem;
+    font-size: 120%;
+    height: 75%;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 0.2rem solid #19376D;
+    border-radius: 2rem;
+    text-decoration: none;
+    color: #A5D7E8;
+}
+
+.nav__button--create{
+    background-color: #19376D;
+}
+
+.nav__button:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+.filter-section{
+    width: 100%;
+    height: 5.5rem;
+    display: flex;
+    color: #A5D7E8;
+    font-size: 120%;
+    border-bottom: 0.3rem solid #19376D;
+}
+
+.filter-section__label{
+    margin-right: .5rem;
+}
+
+.filter-section__wrapper{
+    margin:auto;
+}
+
+.gridCard{
+    grid-column: span 4;
+    width: 100%;
+    height: 65rem;
+    box-shadow: 0 0.5rem 2rem black;
+    border-radius: 2rem;
+}
+
+.gridCard--review{
+    height: 50rem;
+}
+
+.gridCard__a{
+    text-decoration: none;
+}
+
+.gridCard__article{
+    width: 100%;
+    height: 100%;
+}
+
+.gridCard__header{
+    width: 100%;
+    height: 10%;
+}
+
+.gridCard__heading{
+    margin: 2rem auto 0.5rem 2rem;   
+    color:#A5D7E8;
+}
+
+.gridCard__figure{
+    width:100%;
+    height:45%;
+}
+
+.gridCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gridCard__textSection{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    padding:2rem;
+}
+
+.gridCard__text{
+    color: #A5D7E8;
+    margin-left: 0;
+}
+
+.gridCard__subtitel{
+    color: #A5D7E8;
+    margin-top: 2rem;
+}
+
+/* gridcard profiel */
+
+.gridCard--profiel{
+    height: 40rem;
+}
+
+.gridCard__textSection--profiel{
+    height: auto;
+    padding-bottom: 0;
+}
+
+.gridCard__figure--profiel{
+    height:65%;
+    width: 100%;
+}
+
+.gridCard__image--profiel{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media(max-width: 56.25rem){
+    .gridCard{
+        grid-column: span 6;
+    } 
+    .gridCard__figure{
+        height:40%;
+    }   
+}
+
+@media(max-width: 65rem) {
+    .nav__pagina{
+        margin-top:1rem;
+    }    
+    .nav__button{
+        padding: 0.5rem 2rem;
+        font-size: 100%;
+    }
+}
+
+@media(max-width: 50rem) {
+    .nav{
+        height: auto;
+    }    
+    .nav__wrapper{
+        width: 100%;
+        height: 100%;
+        padding-bottom:2rem;
+    }     
+    .nav__pagina{
+        display: block;
+    }    
+    .nav__pagina--create{
+        float: none;
+    }    
+    .nav__button{
+        width: 100%;
+        padding: 1rem 3rem;
+        font-size: 120%;
+    }
+    .nav__button--logout{
+        display: block;
+        text-align: center;
+    }
+    .nav__form {
+        padding: 1rem 0;
+        position: relative;
+    }
+}
+
+@media(max-width: 37.5rem){
+    .gridCard{
+        height: 60rem
+    } 
+    .gridCard--review{
+        height: 50rem
+    }
+    .gridCard--profiel{
+        height: 40rem;
+    }    
+}
+
+@media(max-width: 32.5rem){
+    .gridCard{
+        grid-column: span 12;
+    }
+    .filter-section{
+        width: 100%;
+        height: auto;
+        font-size: 140%;
+        margin: 1rem auto 1rem auto;
+        flex-wrap: wrap;
+    }    
+    .filter-section__wrapper{
+        margin:auto;
+        margin: 1.5rem;
+    }
+
+}
+
+/* admin index pagina */
+.gridCard--admin{
+    height: 45rem;
+}
+
+.gridCard__buttonsection--wijzigen{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.gridCard__button--wijzigen{
+    padding: 1rem 4rem;
+    font-size: 125%;
+    background-color: #19376D;
+    text-decoration: none;
+    color: #A5D7E8;
+    border:none;
+}
+
+.gridCard__button--wijzigen:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+.gridCard__a--wijzigen{
+    display: inline-block;
+    margin: auto;
+}
+
+.adminTussen{
+    margin: 3rem 0 3rem 0;
+    width: 100%;
+    grid-column: 1 / span 12;
+    height:7.5rem;
+    background-color: #19376D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.adminTussen__titel{
+    color: #A5D7E8;
+}
+
+.verwijderCard{
+    grid-column: span 4;
+    width: 100%;
+    height: 45rem;
+    box-shadow: 0 0.5rem 2rem black;
+}
+
+.verwijderCard__article{
+    width: 100%;
+    height: 100%;
+}
+
+.verwijderCard__header{
+    width: 100%;
+    height: 10%;
+}
+
+.verwijderCard__heading{
+    margin: 2rem auto 0.5rem 2rem;   
+    color:#A5D7E8;
+}
+
+.verwijderCard__figure{
+    width:100%;
+    height:45%;
+}
+
+.verwijderCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.verwijderCard__textSection{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    padding:2rem;
+    font-size: 130%;
+}
+
+.verwijderCard__text{
+    color: #A5D7E8;
+    margin-left: 0;
+}
+
+.verwijderCard__btnsection{
+    width: 100%;
+    height:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.verwijderCard__button{
+    padding: 1rem 4rem;
+    font-size: 125%;
+    border: none;
+    color: white;
+    text-decoration: none;
+    background-color:#A53E33;
+    transition: 0.5s all;
+}
+
+.verwijderCard__button:hover{
+    background-color: #ca5e52;
+}
+
+
+@media(max-width: 56.25rem){
+    .verwijderCard{
+        grid-column: span 6;
+    } 
+    .verwijderCard__figure{
+        height:40%;
+    }   
+}
+
+@media(max-width: 43.75rem){
+    .adminTussen{
+        grid-template-rows: repeat(1, minmax(0,1fr));
+        height: 7.5rem;
+    }
+    .adminTussen__titel{
+        font-size: 200%;
+    }
+}
+
+@media(max-width: 32.5rem){
+    .verwijderCard{
+        grid-column: span 12;
+    }
+}
+
+/* blokkeer pagina */
+.create-formBlokkeer{
+    width: 55%;
+    margin:2rem auto 2rem auto;
+    box-shadow: 0 0.5rem 2rem black;
+    display: flex;
+    color: #A5D7E8;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-formBlokkeer__form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.create-formBlokkeer__section{
+    margin-top: 3rem;
+    font-size: 120%;
+    width: 100%;
+}
+
+.create-formBlokkeer__label{
+    font-size:150%;
+}
+
+.create-formBlokkeer__input{
+    display: block;
+    margin-top:1rem;
+    width: 40%;
+    font-size: 100%;
+    font-weight: 400;
+    padding:0.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.create-formBlokkeer__btnsection{
+    width: 100%;
+    margin: 3rem auto 3rem auto;
+}
+
+.create-formBlokkeer__button{
+    padding: 1rem 4rem;
+    font-size: 125%;
+    background-color: #19376D;
+    text-decoration: none;
+    color: #A5D7E8;
+    border:none;
+}
+
+.create-formBlokkeer__button:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+
+@media(max-width: 62.5rem){
+    .create-formBlokkeer__input{
+        width:65%;
+    }
+}
+
+@media(max-width: 43.75rem){
+    .create-formBlokkeer{
+        width:75%;
+    }
+}
+
+@media(max-width: 31.25rem){
+    .create-formBlokkeer{
+        width:85%;
+    }
+}
+
+/* show pagina account */
+.accountHeader{
+    width:100%;
+    height:7.5rem;
+    background-color: #19376D;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-rows: repeat(1, minmax(0,1fr));
+}
+
+.accountHeader__titel{
+    color: #A5D7E8;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    margin: auto;
+}
+
+.accountHeader__pagina{
+    margin: auto auto auto 2rem;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.accountHeader__button{
+    padding: 1rem 3rem;
+    font-size: 120%;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 0.3rem solid #0B2447;
+    text-decoration: none;
+    color: #A5D7E8;
+}
+
+@media(max-width: 56.25rem){
+    .accountHeader__titel{
+        font-size:160%;
+    }
+}
+
+@media(max-width: 43.75rem){
+    .accountHeader{
+        grid-template-rows: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(1, minmax(0,1fr));
+    }
+    .accountHeader__titel{
+        font-size: 200%;
+        grid-column: 1 / span 1;
+    }
+    .accountHeader__pagina{
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        margin: auto;
+    }
+    .accountHeader{
+        height:15rem;
+    }
+}
+
+.accountHeader__button:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+.accountCard{
+    width: 55%;
+    height:auto;
+    margin: 2rem auto 2rem auto;  
+    box-shadow: 0 0.2rem 0.5rem black; 
+    padding-bottom: 2rem; 
+}
+
+.accountCard__figure{
+    width: 100%;
+    height: 40rem;
+}
+
+.accountCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.accountCard__subtitel{
+    padding-top: 1rem;
+    font-size: 180%;
+}
+
+.accountCard__textsection{
+    padding: 2rem 1rem 0 2rem;
+    color: #A5D7E8;
+}
+
+.accountCard__text--berichtOppasser{
+    margin-bottom: 2rem;
+}
+
+.accountCard__text{
+    font-size:120%;
+}
+
+.accountCard__btnSection{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;  
+    gap:2rem; 
+}
+
+.buttonCard__link{
+    height: auto;
+    width: auto;
+}
+
+.accountCard__button{
+    font-size: 120%;
+    width:100%;
+    height: 100%;
+    padding: 2rem 6rem;
+    box-sizing: border-box;
+    background-color: #30b293;
+    border:none;
+    color: #A5D7E8;
+    transition: 0.2s all;
+}
+
+.accountCard__button--weigeren{
+    background-color:transparent;
+    border: 0.3rem solid #A53E33;
+}
+
+.accountCard__button:hover{
+    cursor: pointer;
+    background-color: #55d1b4;
+    transition: 0.5s all;
+    color: black;
+}
+
+.accountCard__button--weigeren:hover{
+    background-color: #ca5e52;
+}
+
+.accountCard__back_to_home{
+    display: block;
+    margin: auto auto auto 2rem;
+    color:#A5D7E8;
+}
+
+@media(max-width: 59.375rem){
+    .accountCard{
+        width:65%;
+    }
+
+    .accountCard__btnSection{
+        flex-direction: column;
+        margin:1.5rem auto 1.5rem auto;
+        padding:1rem;
+    }
+}
+
+@media(max-width: 40.625rem){
+    .accountCard{
+        width:80%;
+    }
+}
+
+@media(max-width:37.5rem){
+    .accountCard{
+        width:35rem;
+    }
+}
+
+@media(max-width:25rem){
+    .accountCard{
+        width:30rem;
+    }
+    .accountCard__text{
+        padding-right: 1rem;
+    }
+}
+
+/* huisdier show */
+.huisdierCard{
+    width: 55%;
+    height:auto;
+    margin: 2rem auto 2rem auto;  
+    box-shadow: 0 0.2rem 0.5rem black;  
+    color:white;
+}
+
+.huisdierCard__figure{
+    width: 100%;
+    height: 40rem;
+}
+
+.huisdierCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.huisdierCard__subtitel{
+    padding-top: 1rem;
+    font-size: 180%;
+}
+
+.huisdierCard__text{
+    padding: 2rem 2rem 0 2rem;
+    color: #A5D7E8;
+}
+
+.huisdierCard__text{
+    font-size:110%;
+}
+
+.huisdierCard__btnSection{
+    width: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: left;
+    align-items: left;  
+    flex-direction: column;
+    gap:2rem; 
+}
+
+.huisdierCard__button{
+    font-size: 120%;
+    padding: 2rem 6rem;
+    box-sizing: border-box;
+    background-color: #19376D;
+    border:none;
+    color: #A5D7E8;
+    transition: 0.2s all;
+}
+
+.huisdierCard__button:hover{
+    cursor: pointer;
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+.huisdierCard__back_to_home{
+    display: block;
+    color:#A5D7E8;
+}
+
+@media(max-width: 59.375rem){
+    .huisdierCard{
+        width:65%;
+    }
+
+    .huisdierCard__btnSection{
+        flex-direction: column;
+        margin:1.5rem auto 1.5rem auto;
+        padding:1rem;
+    }
+}
+
+@media(max-width: 40.625rem){
+    .huisdierCard{
+        width:80%;
+    }
+}
+
+@media(max-width:37.5rem){
+    .huisdierCard{
+        width:35rem;
+    }
+}
+
+@media(max-width:25rem){
+    .huisdierCard{
+        width:35rem;
+    }
+    .huisdierCard__text{
+        padding-right: 1rem;
+    }
+}
+
+
+/* create huisdier */
+.create-form{
+    width: 55%;
+    margin:2rem auto 2rem auto;
+    box-shadow: 0 0.5rem 2rem black;
+    display: flex;
+    color: #A5D7E8;
+    align-items: left;
+    flex-direction: column;
+}
+
+.create-form__titel{
+    width: 90%;
+    margin: 2rem auto auto auto;
+}
+
+.create-form__titel--review{
+    margin: 2rem auto auto 0;
+}
+
+.create-form__form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.create-form__section{
+    margin-top: 3rem;
+    font-size: 120%;
+    width: 100%;
+}
+
+.create-form__input{
+    display: block;
+    margin-top:1rem;
+    width: 80%;
+    font-size: 100%;
+    font-weight: 400;
+    padding-left:0.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.create-form__input--soort{
+    width: 40%;
+}
+
+.create-form__input--number{
+    width: 30%;
+}
+
+.create-form__input--afbeelding{
+    width:60%;
+}
+
+.create-form__input--big{
+    height: 15rem;
+}
+
+.create-form__input--big--bericht{
+    width:55%;
+}
+
+.create-form__button{
+    font-size: 110%;
+    width:auto;
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #07689f;
+    border: none;
+    color: #A5D7E8;
+    box-shadow: 0 0 5rem rgba(7, 104, 159, 0.7);
+    transition: 0.2s all;
+    margin-bottom: 2rem;
+}
+
+.create-form__button:hover{
+    cursor: pointer;
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+@media(max-width: 87.5rem){
+    .create-form__input--big--bericht{
+        width:80%;
+    }
+}
+
+@media(max-width: 62.5rem){
+    .create-form{
+        width:90%;
+    }
+    .create-form--bericht{
+        width:65%;
+    }
+}
+
+@media(max-width: 50rem){
+    .create-form--bericht{
+        width:85%;
+    }
+}
+
+@media(max-width: 37.5rem){
+    .create-form--bericht{
+        width:85%;
+    }
+
+    .create-form__input--big--bericht{
+        width: 100%;
+    }
+    .create-form__section--bericht{
+        width: 100%;
+    }
+}
+
+@media(max-width: 32.25rem){
+    .create-form__input--soort{
+        width: 50%;
+    }
+    
+    .create-form__input--number{
+        width: 40%;
+    }
+    
+    .create-form__input--afbeelding{
+        width:80%;
+    }
+}
+
+/* profiel show */
+.profielHeader{
+    width:100%;
+    height:7.5rem;
+    background-color: #19376D;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-rows: repeat(1, minmax(0,1fr));
+}
+
+.profielHeader__titel{
+    color: #A5D7E8;
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    margin: auto;
+}
+
+.profielHeader__pagina{
+    margin: auto auto auto 2rem;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.profielHeader__button{
+    padding: 1rem 3rem;
+    font-size: 120%;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 0.3rem solid #0B2447;
+    text-decoration: none;
+    color: #A5D7E8;
+}
+
+.profielHeader__button:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+.profielCard{
+    width: 55%;
+    height:auto;
+    margin: 2rem auto 2rem auto;  
+    box-shadow: 0 0.2rem 0.5rem black;  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.profielCard__subtitel{
+    color: #A5D7E8;
+    margin: 2rem;
+}
+
+.profielCard__figure{
+    width: 100%;
+    height: 40rem;
+}
+
+.profielCard__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profielCard__text{
+    padding: 2rem;
+    color: white;
+    font-size: 120%;
+}
+
+@media(max-width: 56.25rem){
+    .profielHeader__titel{
+        font-size:160%;
+    }
+    .profielCard{
+        width:70%;
+    }
+}
+
+@media(max-width: 43.75rem){
+    .profielHeader{
+        grid-template-rows: repeat(2, minmax(0,1fr));
+        grid-template-columns: repeat(1, minmax(0,1fr));
+    }
+    .profielHeader__titel{
+        font-size: 200%;
+        grid-column: 1 / span 1;
+    }
+    .profielHeader__pagina{
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        margin: auto;
+    }
+    .profielHeader{
+        height:15rem;
+    }
+}
+
+@media(max-width:37.5rem){
+    .profielCard{
+        width:35rem;
+    }
+}
+
+
+/* error pagina */
+.errorCard{
+    width: 55%;
+    height:auto;
+    box-shadow: 0 0.2rem 0.5rem black;  
+    padding:4rem;
+}
+
+.errorCard__text{
+    margin: auto auto 3rem 3rem;
+    color: #A5D7E8;
+    font-size: 120%;
+}
+.errorCard__subtitel{
+    font-size: 150%;
+}
+.errorCard__btnSection{
+    padding: 2rem 0 2rem 2rem;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.errorCard__button{
+    font-size: 120%;
+    width:25rem;
+    height: 6rem;
+    box-sizing: border-box;
+    background-color: #19376D;
+    border:none;
+    color: #A5D7E8;
+    transition: 0.2s all;
+}
+
+.errorCard__button:hover{
+    background-color: #3cc1ec;
+    transition: 0.5s all;
+    color: black;
+}
+
+@media(max-width:56.25rem){
+    .errorCard{
+        width: auto;
+        margin:4rem;
+    }
+}
+
+@media(max-width:31.25rem){
+    .errorCard__subtitel{
+        font-size:140%;
+    }
+    .errorCard__text{
+        font-size: 110%;
+    }
+    .errorCard{
+        padding: 4rem 2rem 4rem 2rem;
+    }
+}
+
+
+
+/* utility classes */
+.u-list-style-none{
+    list-style:none;
+}
+
+.u-grid-12{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12,minmax(0,1fr));
+}
+
+.u-grid-gap-2{
+    gap: 2rem;
+}
+
+.u-main{
+    padding:2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.u-flex-center{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+/* animations */
+.a-popup{
+    animation-name: popup;
+    animation-duration: 0.8s;
+    animation-fill-mode: backwards;
+}
+
+.a-popup:nth-of-type(2n){
+    animation-delay:0.1s;
+}
+
+.a-popup:nth-of-type(3n){
+    animation-delay:0.2s;
+}
+
+/* default */
+button:hover{
+    cursor: pointer;
+}
+
+
+@keyframes popup{
+    0%{
+        transform: scale(1.05) translateY(2rem);
+        opacity: 0;
+    }
+    70%{
+        transform: scale(1);
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
